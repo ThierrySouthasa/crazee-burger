@@ -1,37 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginPage from './components/LoginPage';
+import OrderPage from './components/OrderPage';
 
 const App = () => {
 
-  const [firstName, setFirstName] = useState('')
-
-  const handleSubmit = event => {
-    event.preventDefault()
-    alert(`Bonjour ${firstName}`)
-    setFirstName('')
-  }
-
-  const handleChange = event => {
-    setFirstName(event.target.value)
-  }
-
   return (
-    <div>
-      <h1>Bienvenue chez nous !</h1>
-      <h2>Connectez-vous</h2>
-      <form action='submit' onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={firstName}
-          placeholder='Entrez votre prénom ...'
-          required
-          onChange={handleChange}
-
-        />
-        <button>Accéder à votre espace</button>
-      </form>
-
-    </div>
-  );
+    <Router>
+      <Routes>
+        <Route path='/' element={<LoginPage />} />
+        <Route path='/order' element={<OrderPage />} />
+      </Routes>
+    </Router>
+  )
 };
 
 export default App;
