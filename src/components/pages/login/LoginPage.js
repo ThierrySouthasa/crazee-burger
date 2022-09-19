@@ -1,45 +1,25 @@
-import React, { useState } from 'react';
-import { useNavigate, createSearchParams } from 'react-router-dom';
+import React from 'react';
 import LogoStyled from '../../../assets/Logo';
+import LoginForm from './LoginForm';
+import styled from 'styled-components/macro';
 
 const LoginPage = () => {
 
-    const [firstName, setFirstName] = useState('')
-    const navigate = useNavigate()
-
-    const handleSubmit = event => {
-        event.preventDefault()
-        setFirstName('')
-        navigate({
-            pathname: '/order',
-            search: createSearchParams({
-                firstName: firstName,
-            }).toString(),
-        })
-    }
-
-    const handleChange = event => {
-        setFirstName(event.target.value)
-    }
-
     return (
-        <div>
+        <LoginPageStyled>
             <LogoStyled />
-            <h1>Bienvenue chez nous !</h1>
-            <h2>Connectez-vous</h2>
-            <form action='submit' onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    value={firstName}
-                    placeholder='Entrez votre prénom ...'
-                    required
-                    onChange={handleChange}
-                />
-                <button>Accéder à votre espace</button>
-            </form>
-
-        </div>
+            <LoginForm />
+        </LoginPageStyled>
     );
 };
+
+const LoginPageStyled = styled.div`
+    height : 100vh;
+    background : rgba(0, 0, 0, 0.7) url(https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size : cover;
+    background-position : center;
+    background-blend-mode: darken;
+`
+
 
 export default LoginPage;
