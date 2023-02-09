@@ -34,12 +34,12 @@ const LoginForm = () => {
                         <input
                             type="text"
                             value={firstName}
-                            placeholder='Entrez votre prénom ...'
+                            placeholder='Entrez votre prénom'
                             required
                             onChange={handleChange}
                         />
                     </div>
-                    <button>Accéder à votre espace</button>
+                    <button>Accéder à mon espace</button>
                 </form>
             </LoginFormStyled>
         </div>
@@ -62,6 +62,7 @@ const LoginFormStyled = styled.div`
     }
 
     h2 {
+        padding : 2rem 0;
         font-size : 3rem;
         color : #FFF;
     }
