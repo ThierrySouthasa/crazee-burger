@@ -1,8 +1,8 @@
 import React from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
-import { HiUserCircle } from "react-icons/hi";
-import Logo from '../../../assets/Logo';
+import { useSearchParams } from 'react-router-dom';
 import styled from 'styled-components/macro';
+import Main from './Main';
+import Navbar from './Navbar';
 
 const OrderPage = () => {
 
@@ -12,19 +12,10 @@ const OrderPage = () => {
     return (
         <OrderPageStyled>
             <div className='container'>
-                <div className='navbar'>
-                    <h1>Bonjour {firstName}</h1>
-                    <Link to={'/'}>
-                        <button>Déconnexion</button>
-                    </Link>
-                    <HiUserCircle />
-                </div>
-                <div className='main'>
-
-                </div>
+                <Navbar firstName={firstName} />
+                <Main />
             </div>
         </OrderPageStyled>
-
     );
 };
 
@@ -41,16 +32,6 @@ const OrderPageStyled = styled.div`
         width: 1400px;
         display: flex;
         flex-direction : column;
-
-        .navbar {
-            background-color: blue;
-            height: 10vh;
-        }
-
-        .main {
-            background-color: green;
-            flex: 1;
-        }
     }
 `
 
