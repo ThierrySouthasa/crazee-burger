@@ -15,7 +15,7 @@ const Navbar = ({ firstName }) => {
 const NavbarStyled = styled.nav`
         background-color: blue;
         height: 10vh;
-        padding-left: 20px;
+        padding: 0 20px;
         display: flex;
         justify-content: space-between;
 `

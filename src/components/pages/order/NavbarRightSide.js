@@ -1,16 +1,11 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { HiUserCircle } from "react-icons/hi";
-import { Link } from 'react-router-dom';
+import Profile from './Profile';
 
-const NavbarRightSide = ({ firstName }) => {
+const NavbarRightSide = () => {
     return (
         <NavbarRightSideStyled>
-            <h1>Bonjour {firstName}</h1>
-            <Link to={'/'}>
-                <button>Déconnexion</button>
-            </Link>
-            <HiUserCircle />
+            <Profile />
         </NavbarRightSideStyled>
     );
 };
