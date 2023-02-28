@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import styled from 'styled-components/macro';
+import { theme } from '../../../assets/theme';
 import Main from './Main';
 import Navbar from './Navbar';
 
@@ -20,18 +21,18 @@ const OrderPage = () => {
 };
 
 const OrderPageStyled = styled.div`
-    background-color: red;
+    background-color: orange;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .container {
-        background-color: orange;
         height: 95vh;
         width: 1400px;
         display: flex;
         flex-direction : column;
+        border-radius: ${theme.borderRadius.extraRound};
     }
 `
 
