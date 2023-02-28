@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro';
 
-const Logo = ({ className }) => {
+const Logo = ({ className, onClick }) => {
 
     return (
-        <LogoStyled className={className}>
+        <LogoStyled className={className} onClick={onClick}>
             <h1>Crazee</h1>
             <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt='logo' />
             <h1>Burger</h1>
