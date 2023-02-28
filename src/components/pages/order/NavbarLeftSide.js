@@ -1,22 +1,18 @@
 import React from 'react';
-import { HiUserCircle } from "react-icons/hi";
-import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
+import Logo from '../../../assets/Logo';
 
-const NavbarLeftSide = ({ firstName }) => {
+
+const NavbarLeftSide = () => {
     return (
         <NavbarLeftSideStyled>
-            <h1>Bonjour {firstName}</h1>
-            <Link to={'/'}>
-                <button>Déconnexion</button>
-            </Link>
-            <HiUserCircle />
+            <Logo />
         </NavbarLeftSideStyled>
     );
 };
 
 const NavbarLeftSideStyled = styled.div`
-    background-color: purple;
+    padding: 12px 0;
 `
 
 export default NavbarLeftSide;

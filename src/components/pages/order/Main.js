@@ -4,7 +4,6 @@ import styled from 'styled-components/macro';
 const Main = () => {
     return (
         <MainStyled>
-            Main
         </MainStyled>
     );
 };

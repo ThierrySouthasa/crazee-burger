@@ -6,8 +6,8 @@ import NavbarRightSide from './NavbarRightSide';
 const Navbar = ({ firstName }) => {
     return (
         <NavbarStyled >
-            <NavbarRightSide />
-            <NavbarLeftSide firstName={firstName} />
+            <NavbarLeftSide />
+            <NavbarRightSide firstName={firstName} />
         </NavbarStyled>
     );
 };
@@ -15,6 +15,7 @@ const Navbar = ({ firstName }) => {
 const NavbarStyled = styled.nav`
         background-color: blue;
         height: 10vh;
+        padding-left: 20px;
         display: flex;
         justify-content: space-between;
 `
