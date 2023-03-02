@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoStyled from '../../../assets/Logo';
+import Logo from '../../../assets/Logo';
 import LoginForm from './LoginForm';
 import styled from 'styled-components/macro';
 
@@ -7,7 +7,7 @@ const LoginPage = () => {
 
     return (
         <LoginPageStyled>
-            <LogoStyled />
+            <Logo className={"logo-login-page"} />
             <LoginForm />
         </LoginPageStyled>
     );
@@ -19,6 +19,11 @@ const LoginPageStyled = styled.div`
     background-size : cover;
     background-position : center;
     background-blend-mode: darken;
+
+    .logo-login-page {
+        transform: scale(2.3);
+        padding: 200px 0 170px 0;
+    }
 `
 
 
