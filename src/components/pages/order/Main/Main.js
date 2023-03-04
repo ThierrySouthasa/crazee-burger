@@ -22,6 +22,8 @@ const MainStyled = styled.div`
     display: grid;
     grid-template-columns: 20% 1fr;
 
+    overflow-y: scroll;
+
 `
 
 export default Main;
