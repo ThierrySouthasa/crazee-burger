@@ -5,6 +5,8 @@ import { theme } from '../../../assets/theme';
 const Main = () => {
     return (
         <MainStyled>
+            <div className="basket">Basket</div>
+            <div className="menu">Menu</div>
         </MainStyled>
     );
 };
@@ -14,7 +16,18 @@ const MainStyled = styled.div`
     flex: 1;  
     border-bottom-left-radius: ${theme.borderRadius.extraRound};
     border-bottom-right-radius: ${theme.borderRadius.extraRound};
-    box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset
+    box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+
+    .basket{
+        background-color: pink;
+    }
+
+    .menu {
+        background-color: purple;
+    }
+
 `
 
 export default Main;
