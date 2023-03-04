@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { fakeMenu2 } from '../../../../fakeData/fakeMenu'
 import { theme } from '../../../../assets/theme';
+import Product from './Product';
 
 const Menu = () => {
     const [menu, setMenu] = useState(fakeMenu2)
@@ -10,18 +11,10 @@ const Menu = () => {
         <MenuStyled>
             {menu.map((produit) => {
                 return (
-                    <div className="produit">
-                        <div className="image">
-                            <img src={produit.imageSource} alt={produit.title} />
-                        </div>
-                        <div className="info-text">
-                            <div className="title">{produit.title}</div>
-                            <div className="description">
-                                <div className="price">{produit.price}</div>
-                                <button className='add-button'>Ajouter</button>
-                            </div>
-                        </div>
-                    </div>)
+                    <Product
+                        imageSource={produit.imageSource}
+                        title={produit.title}
+                        price={produit.price} />)
             })}
         </MenuStyled>
     );
