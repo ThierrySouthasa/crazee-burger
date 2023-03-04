@@ -2,8 +2,8 @@ import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { theme } from '../../../assets/theme';
-import Main from './Main';
-import Navbar from './Navbar';
+import Main from './Main/Main';
+import Navbar from './Navbar/Navbar';
 
 const OrderPage = () => {
 

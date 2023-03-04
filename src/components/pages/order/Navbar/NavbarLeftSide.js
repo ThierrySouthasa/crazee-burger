@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import Logo from '../../../assets/Logo';
-import { refreshPage } from '../../../utils/window';
+import Logo from '../../../../assets/Logo';
+import { refreshPage } from '../../../../utils/window'
 
 
 const NavbarLeftSide = () => {

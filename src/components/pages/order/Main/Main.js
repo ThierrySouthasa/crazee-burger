@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { theme } from '../../../assets/theme';
+import { theme } from '../../../../assets/theme';
 
 const Main = () => {
     return (

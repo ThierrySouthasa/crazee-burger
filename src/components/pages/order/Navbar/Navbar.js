@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import NavbarLeftSide from './NavbarLeftSide';
 import NavbarRightSide from './NavbarRightSide';
-import { theme } from '../../../assets/theme';
+import { theme } from '../../../../assets/theme';
 
 const Navbar = ({ firstName }) => {
     return (
