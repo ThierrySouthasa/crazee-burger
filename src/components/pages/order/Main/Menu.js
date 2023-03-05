@@ -12,6 +12,7 @@ const Menu = () => {
             {menu.map((produit) => {
                 return (
                     <Product
+                        key={produit.id}
                         imageSource={produit.imageSource}
                         title={produit.title}
                         price={produit.price} />)
