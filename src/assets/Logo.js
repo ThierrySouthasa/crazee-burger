@@ -21,7 +21,7 @@ const LogoStyled = styled.div`
     text-transform : uppercase;
 
     img {
-        height : 2em;
+        height : 1.7em;
         margin : 0 10px;
     }
 

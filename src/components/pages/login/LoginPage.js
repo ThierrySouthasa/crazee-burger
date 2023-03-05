@@ -22,7 +22,7 @@ const LoginPageStyled = styled.div`
 
     .logo-login-page {
         transform: scale(2.3);
-        padding: 200px 0 170px 0;
+        padding: 18vh 0 15vh 0;
     }
 `
 
