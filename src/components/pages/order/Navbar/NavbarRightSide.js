@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import ToggleButton from '../../../../assets/ToggleButton';
 import Profile from './Profile';
 
 const NavbarRightSide = ({ firstName }) => {
     return (
         <NavbarRightSideStyled>
-            <button>Mode Admin</button>
+            <ToggleButton labelIfChecked='DÉSACTIVER LE MODE ADMIN' labelIfUnchecked='ACTIVER LE MODE ADMIN' />
             <Profile firstName={firstName} />
         </NavbarRightSideStyled>
     );
