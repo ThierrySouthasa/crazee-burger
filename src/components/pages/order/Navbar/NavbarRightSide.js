@@ -13,7 +13,7 @@ const NavbarRightSide = ({ firstName }) => {
 
 
     const displayToastNotification = () => {
-        if (!isModeAdmin) {
+        if (isModeAdmin) {
             toast.info("Mode admin activé", {
                 icon: <FaUserSecret size={30} />,
                 theme: "dark",

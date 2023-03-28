@@ -13,7 +13,7 @@ const NavbarLeftSide = () => {
 };
 
 const NavbarLeftSideStyled = styled.div`
-    padding: 12px 0;
+    padding: 1vh 0;
 
     .logo-navbar {
         cursor: pointer;

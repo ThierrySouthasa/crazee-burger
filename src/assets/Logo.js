@@ -12,7 +12,7 @@ const Logo = ({ className, onClick }) => {
 }
 
 const LogoStyled = styled.div`
-    font-size : 2.5rem;
+    font-size : 4vh;
     font-family: "Amatic SC", cursive;
     color : #F38F00;
     display : flex;
