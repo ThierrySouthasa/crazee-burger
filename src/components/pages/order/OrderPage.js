@@ -1,22 +1,28 @@
-import React from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
 import styled from 'styled-components/macro';
 import { theme } from '../../../assets/theme';
+import OrderContext from '../../../context/OrderContext';
 import Main from './Main/Main';
 import Navbar from './Navbar/Navbar';
 
 const OrderPage = () => {
 
-    const [params] = useSearchParams()
-    const firstName = params.get('firstName')
+    const [isModeAdmin, setIsModeAdmin] = useState(false)
+
+    const orderContextValue = {
+        isModeAdmin,
+        setIsModeAdmin
+    }
 
     return (
-        <OrderPageStyled>
-            <div className='container'>
-                <Navbar firstName={firstName} />
-                <Main />
-            </div>
-        </OrderPageStyled>
+        <OrderContext.Provider value={orderContextValue}>
+            <OrderPageStyled>
+                <div className='container'>
+                    <Navbar />
+                    <Main />
+                </div>
+            </OrderPageStyled>
+        </OrderContext.Provider>
     );
 };
 

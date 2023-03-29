@@ -1,9 +1,14 @@
 import { BsPersonCircle } from "react-icons/bs"
+import { useSearchParams } from 'react-router-dom';
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { theme } from "../../../../assets/theme"
 
-export default function Profile({ firstName }) {
+export default function Profile() {
+
+  const [params] = useSearchParams()
+  const firstName = params.get('firstName')
+
   return (
     <ProfileStyled>
       <div className="info">

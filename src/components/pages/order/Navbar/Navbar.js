@@ -4,11 +4,11 @@ import NavbarLeftSide from './NavbarLeftSide';
 import NavbarRightSide from './NavbarRightSide';
 import { theme } from '../../../../assets/theme';
 
-const Navbar = ({ firstName }) => {
+const Navbar = () => {
     return (
         <NavbarStyled >
             <NavbarLeftSide />
-            <NavbarRightSide firstName={firstName} />
+            <NavbarRightSide />
         </NavbarStyled>
     );
 };

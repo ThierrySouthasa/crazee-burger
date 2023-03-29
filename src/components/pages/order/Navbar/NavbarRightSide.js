@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import styled from 'styled-components/macro';
 import ToggleButton from '../../../../assets/ToggleButton';
@@ -6,14 +6,14 @@ import Profile from './Profile';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaUserSecret } from "react-icons/fa"
 import ToastAdmin from './ToastAdmin';
+import OrderContext from '../../../../context/OrderContext';
 
-const NavbarRightSide = ({ firstName }) => {
+const NavbarRightSide = () => {
 
-    const [isModeAdmin, setIsModeAdmin] = useState(false)
-
+    const { isModeAdmin, setIsModeAdmin } = useContext(OrderContext)
 
     const displayToastNotification = () => {
-        if (isModeAdmin) {
+        if (!isModeAdmin) {
             toast.info("Mode admin activé", {
                 icon: <FaUserSecret size={30} />,
                 theme: "dark",
@@ -31,8 +31,12 @@ const NavbarRightSide = ({ firstName }) => {
 
     return (
         <NavbarRightSideStyled>
-            <ToggleButton labelIfChecked='DÉSACTIVER LE MODE ADMIN' labelIfUnchecked='ACTIVER LE MODE ADMIN' onToggle={displayToastNotification} />
-            <Profile firstName={firstName} />
+            <ToggleButton
+                isChecked={isModeAdmin}
+                labelIfChecked='DÉSACTIVER LE MODE ADMIN'
+                labelIfUnchecked='ACTIVER LE MODE ADMIN'
+                onToggle={displayToastNotification} />
+            <Profile />
             <ToastAdmin />
         </NavbarRightSideStyled>
     );
