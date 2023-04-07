@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 import AdminPanel from './AdminPanel';
 import AdminTabs from './AdminTabs';
 
 const Admin = () => {
+    const [isCollapsed, setIsCollapsed] = useState(false)
+
     return (
         <AdminStyled>
-            <AdminTabs />
-            <AdminPanel />
+            <AdminTabs isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
+            {isCollapsed && <AdminPanel />}
         </AdminStyled>
     );
 };
