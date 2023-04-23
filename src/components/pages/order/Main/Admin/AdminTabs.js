@@ -14,33 +14,52 @@ const AdminTabs = () => {
     setIsCollapsed(!isCollapsed)
   }
 
-  const selectEditTab = () => {
+  const selectTab = (tabSelected) => {
     setIsCollapsed(true)
-    setisEditSelected(true)
-    setisAddSelected(false)
+
+    if (tabSelected === "add") {
+      setisAddSelected(true)
+      setisEditSelected(false)
+    }
+
+    if (tabSelected === "edit") {
+      setisEditSelected(true)
+      setisAddSelected(false)
+    }
   }
 
-  const selectAddTab = () => {
-    setIsCollapsed(true)
-    setisAddSelected(true)
-    setisEditSelected(false)
-
-  }
+  const tabsConfig = [
+    {
+      label: "",
+      Icon: isCollapsed ? <FiChevronDown /> : <FiChevronUp />,
+      onClick: handleClick,
+      className: isCollapsed ? "" : "isActive",
+    },
+    {
+      label: "Ajouter un produit",
+      Icon: <AiOutlinePlus />,
+      onClick: () => selectTab("add"),
+      className: isAddSelected ? "isActive" : "",
+    },
+    {
+      label: "Modifier un produit",
+      Icon: <MdModeEditOutline />,
+      onClick: () => selectTab("edit"),
+      className: isEditSelected ? "isActive" : "",
+    }
+  ]
 
   return (
     <AdminTabsStyled>
-      <Tab
-        Icon={isCollapsed ? <FiChevronDown /> : <FiChevronUp />}
-        onClick={handleClick}
-        className={isCollapsed ? "" : "isActive"} label="" />
-      <Tab
-        Icon={<AiOutlinePlus />}
-        onClick={selectAddTab}
-        className={isAddSelected ? "isActive" : ""} label="Ajouter un produit" />
-      <Tab
-        Icon={<MdModeEditOutline />}
-        onClick={selectEditTab}
-        className={isEditSelected ? "isActive" : ""} label="Modifier un produit" />
+      {tabsConfig.map((tab => {
+        return (
+          <Tab
+            label={tab.label}
+            Icon={tab.Icon}
+            onClick={tab.onClick}
+            className={tab.className} />
+        )
+      }))}
     </AdminTabsStyled>
   );
 };
