@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { theme } from '../../../../../assets/theme';
+import OrderContext from '../../../../../context/OrderContext';
 
 const AdminPanel = () => {
+    const { isAddSelected, isEditSelected } = useContext(OrderContext)
+
     return (
         <AdminPanelStyled>
-
+            {isAddSelected && "Ajouter un produit"}
+            {isEditSelected && "Modifier un produit"}
         </AdminPanelStyled>
     );
 };
 
 const AdminPanelStyled = styled.div`
-    height: 250px;
+    height: 251px;
     background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.greyLight};
+    border-top: 1px solid ${theme.colors.greyLight};
+    border-bottom-left-radius: ${theme.borderRadius.extraRound};
+    border-bottom-right-radius: ${theme.borderRadius.extraRound}
     box-shadow: ${theme.shadows.subtle};
 `;
 
