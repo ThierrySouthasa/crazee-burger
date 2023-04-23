@@ -11,6 +11,7 @@ const OrderPage = () => {
     const [isCollapsed, setIsCollapsed] = useState(false)
     const [isEditSelected, setisEditSelected] = useState(false)
     const [isAddSelected, setisAddSelected] = useState(true)
+    const [currentTabSelected, setCurrentTabSelected] = useState("add")
 
     const orderContextValue = {
         isModeAdmin,
@@ -20,7 +21,9 @@ const OrderPage = () => {
         isAddSelected,
         setisAddSelected,
         isEditSelected,
-        setisEditSelected
+        setisEditSelected,
+        currentTabSelected,
+        setCurrentTabSelected
     }
 
     return (
