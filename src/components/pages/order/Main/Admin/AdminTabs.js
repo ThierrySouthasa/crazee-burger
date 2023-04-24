@@ -32,7 +32,7 @@ const AdminTabs = () => {
           label={tab.label}
           Icon={tab.Icon}
           onClick={() => selectTab(tab.index)}
-          className={tab.className} />
+          className={currentTabSelected === tab.index ? "isActive" : ""} />
       )
       ))}
     </AdminTabsStyled>
