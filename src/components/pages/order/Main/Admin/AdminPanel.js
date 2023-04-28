@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { theme } from '../../../../../assets/theme';
 import OrderContext from '../../../../../context/OrderContext';
-import { getTabsConfig, getTabSelected } from './getTabsConfig';
+import { getTabSelected, tabsConfig } from './tabsConfig';
 
 const AdminPanel = () => {
     const { currentTabSelected } = useContext(OrderContext)
 
-    const tabs = getTabsConfig(currentTabSelected)
+    const tabs = tabsConfig
     const tabSelected = getTabSelected(tabs, currentTabSelected)
 
     return (

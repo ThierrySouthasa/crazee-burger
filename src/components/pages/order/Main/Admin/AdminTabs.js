@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Tab from '../../../../../assets/Tab';
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"
-import { getTabsConfig } from "./getTabsConfig"
+import { tabsConfig } from "./tabsConfig"
 import { theme } from '../../../../../assets/theme';
 import OrderContext from '../../../../../context/OrderContext';
 
@@ -18,7 +18,7 @@ const AdminTabs = () => {
     setCurrentTabSelected(tabSelected)
   }
 
-  const tabs = getTabsConfig(currentTabSelected)
+  const tabs = tabsConfig
 
   return (
     <AdminTabsStyled>
