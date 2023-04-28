@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { fakeMenu2 } from '../../../../fakeData/fakeMenu'
+import { fakeMenu } from '../../../../fakeData/fakeMenu'
 import { theme } from '../../../../assets/theme';
 import Product from './Product';
 
 const Menu = () => {
-    const [menu] = useState(fakeMenu2)
+    const [menu] = useState(fakeMenu.LARGE)
 
     return (
         <MenuStyled>
