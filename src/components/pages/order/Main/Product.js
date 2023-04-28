@@ -5,22 +5,22 @@ import PrimaryButton from './PrimaryButton';
 import { formatPrice } from '../../../../utils/maths'
 
 const Product = ({ imageSource, title, price }) => {
-    return (
-        <ProductStyled className="produit">
-            <div className="image">
-                <img src={imageSource} alt={title} />
-            </div>
-            <div className="info-text">
-                <div className="title">{title}</div>
-                <div className="description">
-                    <div className="price">{formatPrice(price)}</div>
-                    <div className="right-description">
-                        <PrimaryButton className="primary-button" label={"Ajouter"} />
-                    </div>
-                </div>
-            </div>
-        </ProductStyled>
-    );
+  return (
+    <ProductStyled className="produit">
+      <div className="image">
+        <img src={imageSource} alt={title} />
+      </div>
+      <div className="info-text">
+        <div className="title">{title}</div>
+        <div className="description">
+          <div className="price">{formatPrice(price)}</div>
+          <div className="right-description">
+            <PrimaryButton className="primary-button" label={"Ajouter"} />
+          </div>
+        </div>
+      </div>
+    </ProductStyled>
+  );
 };
 
 const ProductStyled = styled.div`
@@ -31,7 +31,7 @@ const ProductStyled = styled.div`
   grid-template-rows: 65% 1fr;
   padding: 20px;
   padding-bottom: 10px;
-  box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
+  box-shadow: ${theme.shadows.medium};
   border-radius: ${theme.borderRadius.extraRound};
 
         .image {

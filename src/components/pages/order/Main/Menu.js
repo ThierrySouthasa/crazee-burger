@@ -5,7 +5,7 @@ import { theme } from '../../../../assets/theme';
 import Product from './Product';
 
 const Menu = () => {
-    const [menu, setMenu] = useState(fakeMenu2)
+    const [menu] = useState(fakeMenu2)
 
     return (
         <MenuStyled>
@@ -28,7 +28,7 @@ const MenuStyled = styled.div`
     grid-row-gap: 60px;
     padding: 50px 50px 150px;
     justify-items: center;
-    box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: ${theme.shadows.strong};
     overflow-y: scroll;
 `
 
