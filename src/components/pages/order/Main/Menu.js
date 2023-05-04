@@ -4,6 +4,8 @@ import { theme } from '../../../../assets/theme';
 import OrderContext from '../../../../context/OrderContext';
 import Product from './Product';
 
+const IMAGE_BY_DEFAULT = "/images/coming-soon.png"
+
 const Menu = () => {
     const { menu } = useContext(OrderContext)
 
@@ -13,7 +15,7 @@ const Menu = () => {
                 return (
                     <Product
                         key={produit.id}
-                        imageSource={produit.imageSource}
+                        imageSource={produit.imageSource ? produit.imageSource : IMAGE_BY_DEFAULT}
                         title={produit.title}
                         price={produit.price} />)
             })}
