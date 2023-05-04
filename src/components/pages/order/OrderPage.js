@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components/macro';
 import { theme } from '../../../assets/theme';
 import OrderContext from '../../../context/OrderContext';
+import { fakeMenu } from '../../../fakeData/fakeMenu';
 import Main from './Main/Main';
 import Navbar from './Navbar/Navbar';
 
@@ -10,6 +11,13 @@ const OrderPage = () => {
     const [isModeAdmin, setIsModeAdmin] = useState(false)
     const [isCollapsed, setIsCollapsed] = useState(false)
     const [currentTabSelected, setCurrentTabSelected] = useState("add")
+    const [menu, setMenu] = useState(fakeMenu.LARGE)
+
+    const handleAdd = (newProduct) => {
+        const menuCopy = [...menu]
+        const menuUpdated = [newProduct, ...menuCopy]
+        setMenu(menuUpdated)
+    }
 
     const orderContextValue = {
         isModeAdmin,
@@ -17,7 +25,10 @@ const OrderPage = () => {
         isCollapsed,
         setIsCollapsed,
         currentTabSelected,
-        setCurrentTabSelected
+        setCurrentTabSelected,
+        menu,
+        setMenu,
+        handleAdd,
     }
 
     return (
