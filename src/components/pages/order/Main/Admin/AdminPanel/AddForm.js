@@ -24,6 +24,7 @@ const AddForm = () => {
         }
 
         handleAdd(newProductToAdd)
+        setnewProduct(EMPTY_PRODUCT)
     }
 
     const handleChange = (event) => {
@@ -44,14 +45,14 @@ const AddForm = () => {
                     name='title'
                     value={newProduct.title}
                     type="text"
-                    placeholder='Nom'
+                    placeholder='Nom du produit (ex: Super burger)'
                     onChange={handleChange}
                 />
                 <input
                     name='imageSource'
                     value={newProduct.imageSource}
                     type="text"
-                    placeholder='Image URL'
+                    placeholder="Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)"
                     onChange={handleChange}
                 />
                 <input
