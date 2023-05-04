@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { FiCheck } from 'react-icons/fi';
 import styled from 'styled-components';
 import OrderContext from '../../../../../../context/OrderContext';
 
@@ -14,6 +15,7 @@ const AddForm = () => {
     const { handleAdd } = useContext(OrderContext)
 
     const [newProduct, setnewProduct] = useState(EMPTY_PRODUCT)
+    const [isSubmitted, setIsSubmitted] = useState(false)
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -25,11 +27,20 @@ const AddForm = () => {
 
         handleAdd(newProductToAdd)
         setnewProduct(EMPTY_PRODUCT)
+
+        displaySuccessMessage()
     }
 
     const handleChange = (event) => {
         const { name, value } = event.target
         setnewProduct({ ...newProduct, [name]: value })
+    }
+
+    const displaySuccessMessage = () => {
+        setIsSubmitted(true)
+        setTimeout(() => {
+            setIsSubmitted(false)
+        }, 2000)
     }
 
     return (
@@ -63,9 +74,14 @@ const AddForm = () => {
                     onChange={handleChange}
                 />
             </div>
-            <button className="submit-button">
-                Submit button
-            </button>
+            <div className="submit">
+                <button className="submit-button">Submit Button</button>
+                {isSubmitted &&
+                    <div className="submit-message">
+                        <FiCheck />
+                        <span>Ajouté avec succès !</span>
+                    </div>}
+            </div>
         </AddFormStyled>
     );
 };
@@ -98,12 +114,20 @@ const AddFormStyled = styled.form`
         display: grid;
     }
 
-    .submit-button{
+    .submit{
         background : green;
         grid-area: 4 / 2 / 4 / 3 ;
-        width: 50%;
-    }
+        display: flex;
+        align-items: center;
+        
+        .submit-button {
+            width: 50%;
+        }
 
-            `;
+        .submit-message {
+            border: 1px solid red;
+        }
+    }
+`;
 
 export default AddForm;
