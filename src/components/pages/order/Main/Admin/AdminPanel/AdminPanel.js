@@ -24,6 +24,7 @@ const AdminPanelStyled = styled.div`
     border-bottom-left-radius: ${theme.borderRadius.extraRound};
     border-bottom-right-radius: ${theme.borderRadius.extraRound}
     box-shadow: ${theme.shadows.subtle};
+    padding: 30px 5%;
 `;
 
 export default AdminPanel;
