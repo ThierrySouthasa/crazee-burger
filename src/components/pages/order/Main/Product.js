@@ -3,10 +3,14 @@ import styled from 'styled-components';
 import { theme } from '../../../../assets/theme';
 import PrimaryButton from './PrimaryButton';
 import { formatPrice } from '../../../../utils/maths'
+import { TiDelete } from 'react-icons/ti'
 
 const Product = ({ imageSource, title, price }) => {
   return (
     <ProductStyled className="produit">
+      <button className="delete-button" aria-label="delete-button">
+        <TiDelete className="icon" />
+      </button>
       <div className="image">
         <img src={imageSource} alt={title} />
       </div>
@@ -33,8 +37,32 @@ const ProductStyled = styled.div`
   padding-bottom: 10px;
   box-shadow: ${theme.shadows.medium};
   border-radius: ${theme.borderRadius.extraRound};
+  position: relative;
 
-        .image {
+    .delete-button {
+      border: 1px solid red;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      color: ${theme.colors.primary};
+      z-index: 2;
+      padding: 0;
+      border: none;
+      background: none;
+    }
+
+    .icon {
+      height: 35px;
+      width: 35px;
+      :hover {
+        color: ${theme.colors.redSecondary};
+      }
+    }
+
+    .image {
             width: 100%;
             height: auto;
             margin-top: 30px;
@@ -47,7 +75,7 @@ const ProductStyled = styled.div`
             }
         }
 
-        .info-text {
+    .info-text {
             display: grid;
             grid-template-rows: 30% 70%;
             padding: 5px;
