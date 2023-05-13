@@ -1,20 +1,22 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { theme } from '../../../../assets/theme';
-import OrderContext from '../../../../context/OrderContext';
-import Product from './Product';
+import { theme } from '../../../../../assets/theme';
+import OrderContext from '../../../../../context/OrderContext';
+import Product from '../Product';
+import EmptyMenuAdmin from './EmptyMenuAdmin';
+import EmptyMenuClient from './EmptyMenuClient';
 
 const IMAGE_BY_DEFAULT = "/images/coming-soon.png"
 
 const Menu = () => {
     const { menu, isModeAdmin, handleDelete, resetMenu } = useContext(OrderContext)
 
-    if (menu.length === 0)
+    if (menu.length === 0) {
+        if (!isModeAdmin) return <EmptyMenuClient />
         return (
-            <div>
-                <button onClick={resetMenu}>Générer de nouveaux produits</button>
-            </div>
+            <EmptyMenuAdmin onReset={resetMenu} />
         )
+    }
 
     return (
         <MenuStyled>

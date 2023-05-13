@@ -4,7 +4,7 @@ import { theme } from '../../../../assets/theme';
 import OrderContext from '../../../../context/OrderContext';
 import Admin from './Admin/Admin';
 import Basket from './Basket';
-import Menu from './Menu';
+import Menu from './Menu/Menu';
 
 const Main = () => {
 
