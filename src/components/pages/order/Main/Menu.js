@@ -7,7 +7,7 @@ import Product from './Product';
 const IMAGE_BY_DEFAULT = "/images/coming-soon.png"
 
 const Menu = () => {
-    const { menu } = useContext(OrderContext)
+    const { menu, isModeAdmin } = useContext(OrderContext)
 
     return (
         <MenuStyled>
@@ -17,7 +17,9 @@ const Menu = () => {
                         key={produit.id}
                         imageSource={produit.imageSource ? produit.imageSource : IMAGE_BY_DEFAULT}
                         title={produit.title}
-                        price={produit.price} />)
+                        price={produit.price}
+                        hasDeleteButton={isModeAdmin}
+                    />)
             })}
         </MenuStyled>
     );
