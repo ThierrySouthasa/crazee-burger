@@ -5,12 +5,17 @@ import PrimaryButton from './PrimaryButton';
 import { formatPrice } from '../../../../utils/maths'
 import { TiDelete } from 'react-icons/ti'
 
-const Product = ({ imageSource, title, price, hasDeleteButton }) => {
+const Product = ({ imageSource, title, price, hasDeleteButton, onDelete }) => {
   return (
     <ProductStyled className="produit">
-      {hasDeleteButton && <button className="delete-button" aria-label="delete-button">
-        <TiDelete className="icon" />
-      </button>}
+      {hasDeleteButton &&
+        <button
+          className="delete-button"
+          aria-label="delete-button"
+          onClick={onDelete}
+        >
+          <TiDelete className="icon" />
+        </button>}
       <div className="image">
         <img src={imageSource} alt={title} />
       </div>
