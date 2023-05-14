@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { theme } from '../../../../assets/theme';
-import PrimaryButton from './PrimaryButton';
+import AddButton from './AddButton';
 import { formatPrice } from '../../../../utils/maths'
 import { TiDelete } from 'react-icons/ti'
 
@@ -12,8 +12,7 @@ const Product = ({ imageSource, title, price, hasDeleteButton, onDelete }) => {
         <button
           className="delete-button"
           aria-label="delete-button"
-          onClick={onDelete}
-        >
+          onClick={onDelete} >
           <TiDelete className="icon" />
         </button>}
       <div className="image">
@@ -24,7 +23,7 @@ const Product = ({ imageSource, title, price, hasDeleteButton, onDelete }) => {
         <div className="description">
           <div className="price">{formatPrice(price)}</div>
           <div className="right-description">
-            <PrimaryButton className="primary-button" label={"Ajouter"} />
+            <AddButton className="primary-button" label={"Ajouter"} />
           </div>
         </div>
       </div>

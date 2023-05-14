@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { theme } from './theme';
 
-const TextInput = ({ value, onChange, Icon, className, version, ...extraProps }) => {
+const TextInput = ({ value, onChange, Icon, className, version = "normal", ...extraProps }) => {
   return (
     <TextInputStyled className={className} version={version}>
       <div className='icon'>{Icon && Icon}</div>

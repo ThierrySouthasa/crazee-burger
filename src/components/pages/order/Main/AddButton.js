@@ -1,16 +1,16 @@
 import styled from "styled-components"
 import { theme } from '../../../../assets/theme';
 
-export default function PrimaryButton({ label, Icon, className }) {
+export default function AddButton({ label, Icon, className }) {
   return (
-    <PrimaryButtonStyled className={className}>
+    <AddButtonStyled className={className}>
       <span>{label}</span>
       {Icon && Icon}
-    </PrimaryButtonStyled>
+    </AddButtonStyled>
   )
 }
 
-const PrimaryButtonStyled = styled.button`
+const AddButtonStyled = styled.button`
   width: 100%;
   border: 1px solid red;
   display: inline-flex;
