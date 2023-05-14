@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, createSearchParams } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { HiUserCircle } from "react-icons/hi";
+import { theme } from '../../../assets/theme';
 
 const LoginForm = () => {
 
@@ -57,12 +58,12 @@ const LoginFormStyled = styled.div`
         border-bottom : 5px solid #f56a2c;
         padding-bottom : 2rem;
         font-size : 4.5rem;
-        color : #FFF;
+        color : ${theme.colors.white};
     }
     h2 {
         padding : 2rem 0;
         font-size : 3rem;
-        color : #FFF;
+        color : ${theme.colors.white};
     }
     form {
         display : flex;
@@ -76,7 +77,7 @@ const LoginFormStyled = styled.div`
             border-radius : 5px;
             margin-bottom : 0.8em;
             font-size : 40px;
-            background-color : #FFF;
+            background-color : ${theme.colors.white};
             input {
                 height: 30%;
                 width : 70%;
@@ -91,11 +92,11 @@ const LoginFormStyled = styled.div`
             border : none;
             border-radius : 5px;
             background-color : #F39900;
-            color : #FFF;
+            color : ${theme.colors.white};
             font-size : 1.3em;
             font-weight : bold;
             &:hover {
-                background-color : #FFF;
+                background-color : ${theme.colors.white};
                 color : #F39900;
                 border : 1px solid #F39900;
             }
