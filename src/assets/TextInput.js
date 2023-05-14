@@ -39,11 +39,8 @@ const TextInputStyled = styled.div`
     color: ${theme.colors.greyMedium};
   }
 
-${(props) => {
-    if (props.version === "normal") return extraStyleNormal
-    if (props.version === "minimalist") return extraStyleMinimalist
-  }
-  }
+  ${({ version }) => extraStyle[version]}
+
 `
 
 const extraStyleNormal = css`
@@ -72,7 +69,12 @@ const extraStyleMinimalist = css`
       &:focus {
         outline: 0;
   }
+}`
+  ;
+
+const extraStyle = {
+  normal: extraStyleNormal,
+  minimalist: extraStyleMinimalist
 }
-`;
 
 export default TextInput;
