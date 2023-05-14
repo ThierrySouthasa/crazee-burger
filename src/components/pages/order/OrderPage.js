@@ -5,6 +5,7 @@ import OrderContext from '../../../context/OrderContext';
 import { fakeMenu } from '../../../fakeData/fakeMenu';
 import Main from './Main/Main';
 import Navbar from './Navbar/Navbar';
+import { EMPTY_PRODUCT } from './Main/Admin/AdminPanel/AddForm';
 
 const OrderPage = () => {
 
@@ -12,6 +13,7 @@ const OrderPage = () => {
     const [isCollapsed, setIsCollapsed] = useState(false)
     const [currentTabSelected, setCurrentTabSelected] = useState("add")
     const [menu, setMenu] = useState(fakeMenu.LARGE)
+    const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT)
 
     const handleAdd = (newProduct) => {
         const menuCopy = [...menu]
@@ -39,7 +41,9 @@ const OrderPage = () => {
         menu,
         handleAdd,
         handleDelete,
-        resetMenu
+        resetMenu,
+        newProduct,
+        setNewProduct
     }
 
     return (

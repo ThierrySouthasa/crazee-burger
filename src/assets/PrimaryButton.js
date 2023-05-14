@@ -69,7 +69,6 @@ const extraStylePrimary = css`
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-left: 10px;
     }
 `
 

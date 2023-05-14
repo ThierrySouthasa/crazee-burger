@@ -9,7 +9,7 @@ import { theme } from '../../../../../../assets/theme';
 import TextInput from '../../../../../../assets/TextInput';
 import PrimaryButton from '../../../../../../assets/PrimaryButton';
 
-const EMPTY_PRODUCT = {
+export const EMPTY_PRODUCT = {
     id: "",
     title: "",
     imageSource: "",
@@ -18,9 +18,8 @@ const EMPTY_PRODUCT = {
 
 const AddForm = () => {
 
-    const { handleAdd } = useContext(OrderContext)
+    const { handleAdd, newProduct, setNewProduct } = useContext(OrderContext)
 
-    const [newProduct, setnewProduct] = useState(EMPTY_PRODUCT)
     const [isSubmitted, setIsSubmitted] = useState(false)
 
     const handleSubmit = (event) => {
@@ -32,14 +31,14 @@ const AddForm = () => {
         }
 
         handleAdd(newProductToAdd)
-        setnewProduct(EMPTY_PRODUCT)
+        setNewProduct(EMPTY_PRODUCT)
 
         displaySuccessMessage()
     }
 
     const handleChange = (event) => {
         const { name, value } = event.target
-        setnewProduct({ ...newProduct, [name]: value })
+        setNewProduct({ ...newProduct, [name]: value })
     }
 
     const displaySuccessMessage = () => {
