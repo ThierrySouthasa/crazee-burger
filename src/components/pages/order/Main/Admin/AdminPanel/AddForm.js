@@ -53,7 +53,7 @@ const AddForm = () => {
             <ImagePreview imageSource={newProduct.imageSource} title={newProduct.title} />
             <div className="input-fields">
                 {inputTexts.map((input) => (
-                    <TextInput {...input} onChange={handleChange} version="minimalist" />
+                    <TextInput key={input.id} {...input} onChange={handleChange} version="minimalist" />
                 ))}
             </div>
             <div className="submit">
