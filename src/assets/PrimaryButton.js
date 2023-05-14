@@ -11,7 +11,7 @@ const PrimaryButton = ({ className, label, Icon, version = "normal" }) => {
     );
 };
 
-const PrimaryButtonStyled = styled.div`
+const PrimaryButtonStyled = styled.button`
     width: 100%;
     border: 1px solid red;
     display: inline-flex;
